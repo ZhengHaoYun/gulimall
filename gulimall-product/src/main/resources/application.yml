@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://1.12.233.138:3306/gulimall_pms
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# MapperScan
+# sql映射文件位置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+
+server:
+  port: 8081
+
+#  classpath 和 classpath* 区别：
+#
+#  classpath：只会到你的class路径中查找找文件;
+#
+#  classpath*：不仅包含class路径，还包括引入jar包文件中(class路径)进行查找;
+#
+#  classpath*的使用：当项目中有多个classpath路径，并同时加载多个classpath路径下（此种情况多数不会遇到）的文件，*就发挥了作用，如果不加*，则表示仅仅加载第一个classpath路径。
