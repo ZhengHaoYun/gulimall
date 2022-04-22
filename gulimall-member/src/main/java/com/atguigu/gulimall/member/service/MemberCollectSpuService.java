@@ -9,7 +9,7 @@ import java.util.Map;
  * 会员收藏的商品
  *
  * @author zhenghaoyun
- * @email zheng.haoyun@qq.com
+
  * @date 2022-04-21 00:21:08
  */
 public interface MemberCollectSpuService extends IService<MemberCollectSpuEntity> {

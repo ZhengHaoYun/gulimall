@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
  * 会员统计信息
  *
  * @author zhenghaoyun
- * @email zheng.haoyun@qq.com
+
  * @date 2022-04-21 00:21:08
  */
 @Mapper

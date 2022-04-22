@@ -9,7 +9,7 @@ import java.util.Map;
  * 商品满减信息
  *
  * @author zhenghaoyun
- * @email zheng.haoyun@qq.com
+
  * @date 2022-04-21 00:14:03
  */
 public interface SkuFullReductionService extends IService<SkuFullReductionEntity> {

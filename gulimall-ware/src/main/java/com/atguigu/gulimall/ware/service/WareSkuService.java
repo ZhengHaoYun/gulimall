@@ -9,7 +9,7 @@ import java.util.Map;
  * 商品库存
  *
  * @author zhenghaoyun
- * @email zheng.haoyun@qq.com
+
  * @date 2022-04-21 00:28:06
  */
 public interface WareSkuService extends IService<WareSkuEntity> {

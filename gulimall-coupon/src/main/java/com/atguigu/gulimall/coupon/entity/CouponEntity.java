@@ -11,7 +11,7 @@ import lombok.Data;
  * 优惠券信息
  *
  * @author zhenghaoyun
- * @email zheng.haoyun@qq.com
+
  * @date 2022-04-21 00:14:04
  */
 @Data

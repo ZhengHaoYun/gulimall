@@ -9,7 +9,7 @@ import lombok.Data;
  * 品牌分类关联
  *
  * @author zhenghaoyun
- * @email zheng.haoyun@qq.com
+
  * @date 2022-04-20 23:49:53
  */
 @Data

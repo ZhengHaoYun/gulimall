@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 秒杀活动场次
  *
  * @author zhenghaoyun
- * @email zheng.haoyun@qq.com
+
  * @date 2022-04-21 00:14:04
  */
 @RestController

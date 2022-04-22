@@ -10,7 +10,7 @@ import lombok.Data;
  * 商品评价
  *
  * @author zhenghaoyun
- * @email zheng.haoyun@qq.com
+
  * @date 2022-04-20 23:49:52
  */
 @Data

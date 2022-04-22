@@ -9,7 +9,7 @@ import java.util.Map;
  * 商品属性
  *
  * @author zhenghaoyun
- * @email zheng.haoyun@qq.com
+
  * @date 2022-04-20 23:49:53
  */
 public interface AttrService extends IService<AttrEntity> {

@@ -9,7 +9,7 @@ import lombok.Data;
  * sku销售属性&值
  *
  * @author zhenghaoyun
- * @email zheng.haoyun@qq.com
+
  * @date 2022-04-20 23:49:53
  */
 @Data

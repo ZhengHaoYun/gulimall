@@ -9,7 +9,7 @@ import java.util.Map;
  * 秒杀商品通知订阅
  *
  * @author zhenghaoyun
- * @email zheng.haoyun@qq.com
+
  * @date 2022-04-21 00:14:04
  */
 public interface SeckillSkuNoticeService extends IService<SeckillSkuNoticeEntity> {

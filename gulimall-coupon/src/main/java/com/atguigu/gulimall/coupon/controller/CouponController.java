@@ -5,6 +5,7 @@ import com.atguigu.common.utils.R;
 import com.atguigu.gulimall.coupon.entity.CouponEntity;
 import com.atguigu.gulimall.coupon.service.CouponService;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 优惠券信息
  *
  * @author zhenghaoyun
- * @email zheng.haoyun@qq.com
+
  * @date 2022-04-21 00:14:04
  */
 @RestController
@@ -27,6 +28,15 @@ public class CouponController {
 
     @Autowired
     private CouponService couponService;
+
+
+    @RequestMapping("/member/list")
+    public R memberCoupons() {
+        // 应该去数据库查用户对于的优惠券，但这个我们简化了，不去数据库查了，构造了一个优惠券给他返回
+        CouponEntity couponEntity = new CouponEntity();
+        couponEntity.setCouponName("满100减10");//优惠券的名字
+        return R.ok().put("coupons", List.of(couponEntity));
+    }
 
     /**
      * 列表

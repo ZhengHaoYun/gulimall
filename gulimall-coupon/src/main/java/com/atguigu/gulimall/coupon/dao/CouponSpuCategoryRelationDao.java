@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
  * 优惠券分类关联
  *
  * @author zhenghaoyun
- * @email zheng.haoyun@qq.com
+
  * @date 2022-04-21 00:14:04
  */
 @Mapper

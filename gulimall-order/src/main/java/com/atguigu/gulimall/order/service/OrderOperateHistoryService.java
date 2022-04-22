@@ -9,7 +9,7 @@ import java.util.Map;
  * 订单操作历史记录
  *
  * @author zhenghaoyun
- * @email zheng.haoyun@qq.com
+
  * @date 2022-04-21 00:25:37
  */
 public interface OrderOperateHistoryService extends IService<OrderOperateHistoryEntity> {

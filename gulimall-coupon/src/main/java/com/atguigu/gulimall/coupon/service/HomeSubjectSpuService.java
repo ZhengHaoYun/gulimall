@@ -9,7 +9,7 @@ import java.util.Map;
  * 专题商品
  *
  * @author zhenghaoyun
- * @email zheng.haoyun@qq.com
+
  * @date 2022-04-21 00:14:04
  */
 public interface HomeSubjectSpuService extends IService<HomeSubjectSpuEntity> {
