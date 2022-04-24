@@ -6,22 +6,29 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: gulimall-product
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
 
 # MapperScan
 # sql映射文件位置
+# classpath 和 classpath* 区别：
+# classpath：只会到你的class路径中查找找文件;
+# classpath*：不仅包含class路径，还包括引入jar包文件中(class路径)进行查找;
+# classpath*的使用：当项目中有多个classpath路径，并同时加载多个classpath路径下（此种情况多数不会遇到）的文件，*就发挥了作用，如果不加*，则表示仅仅加载第一个classpath路径。
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
     db-config:
       id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
 
 server:
   port: 8081
+logging:
+  level:
+    com.atguigu.gulimall: debug
 
-#  classpath 和 classpath* 区别：
-#
-#  classpath：只会到你的class路径中查找找文件;
-#
-#  classpath*：不仅包含class路径，还包括引入jar包文件中(class路径)进行查找;
-#
-#  classpath*的使用：当项目中有多个classpath路径，并同时加载多个classpath路径下（此种情况多数不会遇到）的文件，*就发挥了作用，如果不加*，则表示仅仅加载第一个classpath路径。
+
