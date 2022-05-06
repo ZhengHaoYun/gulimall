@@ -1,0 +1,9 @@
+### 保存品牌
+POST http://localhost:8081/product/brand/save
+Content-Type: application/json
+
+{
+  "name": ""
+}
+
+###
