@@ -1,9 +1,12 @@
 package com.atguigu.gulimall.product.entity;
 
+import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_EMPTY;
+
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 import java.util.List;
 import lombok.Data;
@@ -63,6 +66,7 @@ public class CategoryEntity implements Serializable {
      * 子分类
      */
     @TableField(exist = false)
+    @JsonInclude(value = NON_EMPTY)
     private List<CategoryEntity> children;
 
 }

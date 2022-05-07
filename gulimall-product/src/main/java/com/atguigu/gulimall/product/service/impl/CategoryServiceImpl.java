@@ -8,6 +8,8 @@ import com.atguigu.gulimall.product.service.CategoryService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -37,10 +39,28 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
 
         // 2.组装成父子的树形结构
         List<CategoryEntity> treeCategory = categories.stream().filter(c -> c.getParentCid() == 0).peek(c -> {
-            List<CategoryEntity> childrenCategory = getChildren(c, categories);
-            c.setChildren(childrenCategory);
-        }).sorted(Comparator.comparingInt(c -> Optional.ofNullable(c.getSort()).orElse(0))).collect(Collectors.toList());
+                    List<CategoryEntity> childrenCategory = getChildren(c, categories);
+                    c.setChildren(childrenCategory);
+                }).sorted(Comparator.comparingInt(c -> Optional.ofNullable(c.getSort()).orElse(0)))
+                .collect(Collectors.toList());
         return treeCategory;
+    }
+
+    @Override
+    public Long[] findCatelogPath(Long catId) {
+        List<Long> path = new ArrayList<>();
+        findParentId(catId, path);
+        Collections.reverse(path);
+
+        return path.toArray(new Long[0]);
+    }
+
+    private void findParentId(Long catId, List<Long> path) {
+        path.add(catId);
+        CategoryEntity category = this.getById(catId);
+        if (category.getParentCid() != 0) {
+            findParentId(category.getParentCid(), path);
+        }
     }
 
     /**

@@ -4,6 +4,7 @@ import com.atguigu.common.utils.PageUtils;
 import com.atguigu.common.utils.R;
 import com.atguigu.gulimall.product.entity.AttrGroupEntity;
 import com.atguigu.gulimall.product.service.AttrGroupService;
+import com.atguigu.gulimall.product.service.CategoryService;
 import java.util.Arrays;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
  * 属性分组
  *
  * @author zhenghaoyun
-
  * @date 2022-04-20 23:49:53
  */
 @RestController
@@ -27,6 +27,9 @@ public class AttrGroupController {
 
     @Autowired
     private AttrGroupService attrGroupService;
+
+    @Autowired
+    private CategoryService categoryService;
 
     /**
      * 列表
@@ -39,6 +42,17 @@ public class AttrGroupController {
         return R.ok().put("page", page);
     }
 
+    /**
+     * 列表
+     */
+    @RequestMapping("/list/{categoryId}")
+    //@RequiresPermissions("product:attrgroup:list")
+    public R listByCategoryId(@RequestParam Map<String, Object> params, @PathVariable Long categoryId) {
+        PageUtils page = attrGroupService.queryPage(params,categoryId);
+
+        return R.ok().put("page", page);
+    }
+
 
     /**
      * 信息
@@ -47,7 +61,7 @@ public class AttrGroupController {
     //@RequiresPermissions("product:attrgroup:info")
     public R info(@PathVariable("attrGroupId") Long attrGroupId) {
         AttrGroupEntity attrGroup = attrGroupService.getById(attrGroupId);
-
+        attrGroup.setCatelogPath(categoryService.findCatelogPath(attrGroup.getCatelogId()));
         return R.ok().put("attrGroup", attrGroup);
     }
 

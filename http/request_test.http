@@ -6,4 +6,5 @@ Content-Type: application/json
   "name": ""
 }
 
-###
+### 根据分类id查询分类属性分组
+GET localhost:88/api/product/attrgroup/list/1?key=大

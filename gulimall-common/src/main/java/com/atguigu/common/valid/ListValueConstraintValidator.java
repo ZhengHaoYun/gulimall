@@ -5,10 +5,11 @@ import java.util.Set;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class ListValueConstraintValidator implements ConstraintValidator<ListValue,Integer> {
+public class ListValueConstraintValidator implements ConstraintValidator<ListValue, Integer> {
 
     private Set<Integer> set = new HashSet<>();
-    //初始化方法
+
+    // 初始化方法
     @Override
     public void initialize(ListValue constraintAnnotation) {
 
@@ -19,9 +20,8 @@ public class ListValueConstraintValidator implements ConstraintValidator<ListVal
 
     }
 
-    //判断是否校验成功
-
     /**
+     * 判断是否校验成功
      *
      * @param value 需要校验的值
      * @param context
