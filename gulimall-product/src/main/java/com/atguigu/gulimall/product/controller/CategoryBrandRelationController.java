@@ -4,9 +4,12 @@ import com.atguigu.common.utils.PageUtils;
 import com.atguigu.common.utils.R;
 import com.atguigu.gulimall.product.entity.CategoryBrandRelationEntity;
 import com.atguigu.gulimall.product.service.CategoryBrandRelationService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +21,6 @@ import org.springframework.web.bind.annotation.RestController;
  * 品牌分类关联
  *
  * @author zhenghaoyun
-
  * @date 2022-04-20 23:49:53
  */
 @RestController
@@ -27,6 +29,19 @@ public class CategoryBrandRelationController {
 
     @Autowired
     private CategoryBrandRelationService categoryBrandRelationService;
+
+    /**
+     * 获取品牌关联的分类
+     */
+    @GetMapping("/catelog/list")
+    //@RequiresPermissions("product:categorybrandrelation:list")
+    public R list(@RequestParam Long brandId) {
+        QueryWrapper<CategoryBrandRelationEntity> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda().eq(CategoryBrandRelationEntity::getBrandId, brandId);
+        List<CategoryBrandRelationEntity> data = categoryBrandRelationService.list(queryWrapper);
+
+        return R.ok().put("data", data);
+    }
 
     /**
      * 列表
@@ -57,7 +72,7 @@ public class CategoryBrandRelationController {
     @RequestMapping("/save")
     //@RequiresPermissions("product:categorybrandrelation:save")
     public R save(@RequestBody CategoryBrandRelationEntity categoryBrandRelation) {
-        categoryBrandRelationService.save(categoryBrandRelation);
+        categoryBrandRelationService.saveDetail(categoryBrandRelation);
 
         return R.ok();
     }
