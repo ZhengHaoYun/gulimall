@@ -8,3 +8,7 @@ Content-Type: application/json
 
 ### 根据分类id查询分类属性分组
 GET localhost:88/api/product/attrgroup/list/1?key=大
+
+
+### 查询规格参数
+GET http://localhost:88/api/product/attr/base/list/0?t=1652251253345&page=1&limit=10&key=
