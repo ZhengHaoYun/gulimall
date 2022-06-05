@@ -24,6 +24,10 @@ public class AttrVO {
      */
     private Integer searchType;
     /**
+     * 值类型[0-为单个值，1-可以选择多个值]
+     */
+    private Integer valueType;
+    /**
      * 属性图标
      */
     private String icon;
@@ -47,8 +51,6 @@ public class AttrVO {
      * 快速展示【是否展示在介绍上；0-否 1-是】，在sku中仍然可以调整
      */
     private Integer showDesc;
-    /**
-     * 属性分组id
-     */
+
     private Long attrGroupId;
 }

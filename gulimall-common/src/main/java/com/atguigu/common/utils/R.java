@@ -1,8 +1,9 @@
 package com.atguigu.common.utils;
 
+import org.apache.http.HttpStatus;
+
 import java.util.HashMap;
 import java.util.Map;
-import org.apache.http.HttpStatus;
 
 /**
  * 返回数据
@@ -52,5 +53,10 @@ public class R extends HashMap<String, Object> {
     public R put(String key, Object value) {
         super.put(key, value);
         return this;
+    }
+
+    public Integer getCode() {
+
+        return (Integer) this.get("code");
     }
 }

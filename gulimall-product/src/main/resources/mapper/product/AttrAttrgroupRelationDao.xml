@@ -6,12 +6,18 @@
 
     <!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.atguigu.gulimall.product.entity.AttrAttrgroupRelationEntity"
-            id="attrAttrgroupRelationMap">
+               id="attrAttrgroupRelationMap">
         <result property="id" column="id"/>
         <result property="attrId" column="attr_id"/>
         <result property="attrGroupId" column="attr_group_id"/>
         <result property="attrSort" column="attr_sort"/>
     </resultMap>
+    <delete id="deleteBatchRelation">
+        DELETE FROM `pms_attr_attrgroup_relation` WHERE
+        <foreach collection="entities" item="item" separator="or">
+            (attr_id = #{item.attrId} and attr_group_id=#{item.attrGroupId})
+        </foreach>
+    </delete>
 
 
 </mapper>

@@ -8,8 +8,9 @@ import com.atguigu.gulimall.product.service.SpuInfoDescService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import java.util.Map;
 import org.springframework.stereotype.Service;
+
+import java.util.Map;
 
 
 @Service("spuInfoDescService")
@@ -24,6 +25,11 @@ public class SpuInfoDescServiceImpl extends ServiceImpl<SpuInfoDescDao, SpuInfoD
         );
 
         return new PageUtils(page);
+    }
+
+    @Override
+    public void saveSpuInfoDesc(SpuInfoDescEntity descEntity) {
+        this.baseMapper.insert(descEntity);
     }
 
 }
