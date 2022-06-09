@@ -1,8 +1,8 @@
 spring:
   datasource:
     username: root
-    password: root
-    url: jdbc:mysql://1.12.233.138:3306/gulimall_sms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    password: 123456
+    url: jdbc:mysql://localhost:3306/gulimall_sms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: gulimall-coupon
