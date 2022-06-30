@@ -1,16 +1,5 @@
-
 server:
   port: 8086
 spring:
   application:
     name: gulimall-third-party
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
-    alicloud:
-      access-key: L~TAI5tJWUumWWh4evahQybgk
-      secret-key: x~jHapQ7IvuFYrbyEn0J50DMgwAOj1P
-      oss:
-        endpoint: oss-cn-beijing.aliyuncs.com
-        bucket: gulimall-zhy

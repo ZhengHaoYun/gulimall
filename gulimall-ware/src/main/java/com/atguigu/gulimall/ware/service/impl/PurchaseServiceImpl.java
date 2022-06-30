@@ -17,6 +17,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -36,9 +37,26 @@ public class PurchaseServiceImpl extends ServiceImpl<PurchaseDao, PurchaseEntity
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
+        QueryWrapper<PurchaseEntity> queryWrapper = new QueryWrapper<>();
+
+        String key = (String) params.get("key");
+        if (!StringUtils.isEmpty(key)) {
+            //purchase_id  sku_id
+            queryWrapper.and(w -> {
+                w.eq("id", key).or().eq("assignee_id", key)
+                        .or().eq("assignee_name", key)
+                        .or().eq("phone", key);
+            });
+        }
+
+        String status = (String) params.get("status");
+        if (!StringUtils.isEmpty(status)) {
+            queryWrapper.eq("status", status);
+        }
+
         IPage<PurchaseEntity> page = this.page(
                 new Query<PurchaseEntity>().getPage(params),
-                new QueryWrapper<PurchaseEntity>()
+                queryWrapper
         );
 
         return new PageUtils(page);

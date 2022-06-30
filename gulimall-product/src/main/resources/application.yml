@@ -10,6 +10,8 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+  jackson:
+    date-format: java.text.SimpleDateFormat
 
 # MapperScan
 # sql映射文件位置
@@ -30,5 +32,6 @@ server:
 logging:
   level:
     com.atguigu.gulimall: debug
+
 
 
