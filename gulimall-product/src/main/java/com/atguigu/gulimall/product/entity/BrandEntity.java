@@ -6,15 +6,16 @@ import com.atguigu.common.valid.UpdateGroup;
 import com.atguigu.common.valid.UpdateStatusGroup;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
+import lombok.Data;
+import org.hibernate.validator.constraints.URL;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 import javax.validation.constraints.Pattern;
-import lombok.Data;
-import org.hibernate.validator.constraints.URL;
+import java.io.Serializable;
 
 /**
  * 品牌
@@ -53,7 +54,6 @@ public class BrandEntity implements Serializable {
     /**
      * 显示状态[0-不显示；1-显示]
      */
-//	@Pattern()
     @NotNull(groups = {AddGroup.class, UpdateStatusGroup.class})
     @ListValue(vals = {0, 1}, groups = {AddGroup.class, UpdateStatusGroup.class})
     private Integer showStatus;

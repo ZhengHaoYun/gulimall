@@ -66,7 +66,9 @@ public class WareSkuServiceImpl extends ServiceImpl<WareSkuDao, WareSkuEntity> i
                 if (info.getCode() == 0) {
                     skuEntity.setSkuName((String) data.get("skuName"));
                 }
-            } catch (Exception ignored) {}
+            } catch (Exception ignored) {
+                // 忽略异常
+            }
             baseMapper.insert(skuEntity);
         } else {
             baseMapper.addStock(skuId, wareId, skuNum);

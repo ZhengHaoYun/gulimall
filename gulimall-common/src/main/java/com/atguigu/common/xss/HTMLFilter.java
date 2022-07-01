@@ -350,8 +350,8 @@ public final class HTMLFilter {
         return result;
     }
 
-    private static String regexReplace(final Pattern regex_pattern, final String replacement, final String s) {
-        Matcher m = regex_pattern.matcher(s);
+    private static String regexReplace(final Pattern regexPattern, final String replacement, final String s) {
+        Matcher m = regexPattern.matcher(s);
         return m.replaceAll(replacement);
     }
 
@@ -394,7 +394,8 @@ public final class HTMLFilter {
                     paramValues.add(m3.group(3)); //([^\"\\s']+)
                 }
 
-                String paramName, paramValue;
+                String paramName;
+                String paramValue;
                 for (int ii = 0; ii < paramNames.size(); ii++) {
                     paramName = paramNames.get(ii).toLowerCase();
                     paramValue = paramValues.get(ii);

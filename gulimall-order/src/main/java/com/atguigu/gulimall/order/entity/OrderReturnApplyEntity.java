@@ -2,10 +2,11 @@ package com.atguigu.gulimall.order.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 订单退货申请
@@ -100,7 +101,7 @@ public class OrderReturnApplyEntity implements Serializable {
     /**
      * 描述
      */
-    private String description述;
+    private String description;
     /**
      * 凭证图片，以逗号隔开
      */
