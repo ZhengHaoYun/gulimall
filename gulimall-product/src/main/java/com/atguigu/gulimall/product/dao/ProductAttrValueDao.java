@@ -8,7 +8,6 @@ import org.apache.ibatis.annotations.Mapper;
  * spu属性值
  *
  * @author zhenghaoyun
-
  * @date 2022-04-20 23:49:53
  */
 @Mapper

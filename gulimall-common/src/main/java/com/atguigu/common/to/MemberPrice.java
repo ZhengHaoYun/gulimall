@@ -1,4 +1,3 @@
-
 package com.atguigu.common.to;
 
 import lombok.Data;

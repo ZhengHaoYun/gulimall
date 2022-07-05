@@ -10,6 +10,10 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.SearchHit;
+import org.elasticsearch.search.SearchHits;
+import org.elasticsearch.search.aggregations.Aggregation;
+import org.elasticsearch.search.aggregations.Aggregations;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -46,7 +50,15 @@ public class GulimallSearchApplicationTests {
         SearchResponse response = client.search(searchRequest, GulimallElasticSearchConfig.COMMON_OPTIONS);
         System.out.println(response.toString());
 
-
+        // 分析数据
+        SearchHits hits = response.getHits();
+        for (SearchHit hit : hits.getHits()) {
+            // ...
+        }
+        Aggregations aggregations = response.getAggregations();
+        for (Aggregation aggregation : aggregations.asList()) {
+            // ...
+        }
     }
 
     @Test

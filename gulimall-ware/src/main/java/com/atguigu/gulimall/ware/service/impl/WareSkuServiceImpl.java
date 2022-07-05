@@ -1,5 +1,6 @@
 package com.atguigu.gulimall.ware.service.impl;
 
+import com.atguigu.common.to.SkuHasStockVo;
 import com.atguigu.common.utils.PageUtils;
 import com.atguigu.common.utils.Query;
 import com.atguigu.common.utils.R;
@@ -16,6 +17,7 @@ import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 
 @Service("wareSkuService")
@@ -56,9 +58,6 @@ public class WareSkuServiceImpl extends ServiceImpl<WareSkuDao, WareSkuEntity> i
             skuEntity.setStock(skuNum);
             skuEntity.setWareId(wareId);
             skuEntity.setStockLocked(0);
-            //TODO 远程查询sku的名字，如果失败，整个事务无需回滚
-            //1、自己catch异常
-            //TODO 还可以用什么办法让异常出现以后不回滚？高级
             try {
                 R info = productFeignService.info(skuId);
                 Map<String, Object> data = (Map<String, Object>) info.get("skuInfo");
@@ -74,6 +73,18 @@ public class WareSkuServiceImpl extends ServiceImpl<WareSkuDao, WareSkuEntity> i
             baseMapper.addStock(skuId, wareId, skuNum);
         }
 
+    }
+
+    @Override
+    public List<SkuHasStockVo> getSkusHasStock(List<Long> skuIds) {
+
+        return skuIds.stream().map(skuId -> {
+            Long count = baseMapper.getSkuStock(skuId);
+            SkuHasStockVo vo = new SkuHasStockVo();
+            vo.setSkuId(skuId);
+            vo.setHasStock(count != null && count > 0);
+            return vo;
+        }).collect(Collectors.toList());
     }
 
 }

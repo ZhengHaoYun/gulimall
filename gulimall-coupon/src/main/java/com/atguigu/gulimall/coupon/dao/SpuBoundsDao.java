@@ -8,7 +8,6 @@ import org.apache.ibatis.annotations.Mapper;
  * 商品spu积分设置
  *
  * @author zhenghaoyun
-
  * @date 2022-04-21 00:14:03
  */
 @Mapper

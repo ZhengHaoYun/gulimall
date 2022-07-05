@@ -5,14 +5,15 @@ import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
 import com.aliyun.oss.OSSException;
 import com.atguigu.gulimall.thirdparty.GulimallThirdPartyApplication;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 @SpringBootTest(classes = GulimallThirdPartyApplication.class)
 @RunWith(SpringRunner.class)
@@ -68,7 +69,7 @@ public class GulimallThirdPartyApplicationTests {
     public void testUpload2() throws FileNotFoundException {
         FileInputStream inputStream = new FileInputStream("/Users/zhenghaoyun/Pictures/SSMD微服务框架模块划分.png");
         // 参数1位bucket  参数2位最终名字
-        ossClient.putObject("gulimall-zhy","321.jpg",inputStream);
+        ossClient.putObject("gulimall-zhy", "321.jpg", inputStream);
         ossClient.shutdown();
     }
 }

@@ -8,7 +8,6 @@ import org.apache.ibatis.annotations.Mapper;
  * 积分变化历史记录
  *
  * @author zhenghaoyun
-
  * @date 2022-04-21 00:21:08
  */
 @Mapper

@@ -2,15 +2,15 @@ package com.atguigu.gulimall.coupon.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
-import lombok.Data;
 
 /**
  * 商品会员价格
  *
  * @author zhenghaoyun
-
  * @date 2022-04-21 00:14:04
  */
 @Data

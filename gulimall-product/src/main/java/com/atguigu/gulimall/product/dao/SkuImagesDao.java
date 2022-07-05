@@ -8,7 +8,6 @@ import org.apache.ibatis.annotations.Mapper;
  * sku图片
  *
  * @author zhenghaoyun
-
  * @date 2022-04-20 23:49:53
  */
 @Mapper

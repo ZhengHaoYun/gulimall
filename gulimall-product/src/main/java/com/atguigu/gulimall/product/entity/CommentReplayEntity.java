@@ -2,14 +2,14 @@ package com.atguigu.gulimall.product.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
 import lombok.Data;
+
+import java.io.Serializable;
 
 /**
  * 商品评价回复关系
  *
  * @author zhenghaoyun
-
  * @date 2022-04-20 23:49:53
  */
 @Data

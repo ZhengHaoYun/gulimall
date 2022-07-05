@@ -12,7 +12,6 @@ import java.util.Map;
  * 属性分组
  *
  * @author zhenghaoyun
-
  * @date 2022-04-20 23:49:53
  */
 public interface AttrGroupService extends IService<AttrGroupEntity> {

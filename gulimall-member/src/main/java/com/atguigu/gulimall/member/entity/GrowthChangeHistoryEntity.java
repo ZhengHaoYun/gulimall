@@ -2,15 +2,15 @@ package com.atguigu.gulimall.member.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 成长值变化历史记录
  *
  * @author zhenghaoyun
-
  * @date 2022-04-21 00:21:08
  */
 @Data
