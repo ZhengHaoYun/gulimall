@@ -12,6 +12,12 @@ spring:
         server-addr: 127.0.0.1:8848
   jackson:
     date-format: java.text.SimpleDateFormat
+  thymeleaf:
+    cache: false
+  redis:
+    host: 1.12.233.138
+    port: 6379
+
 
 # MapperScan
 # sql映射文件位置
@@ -32,6 +38,7 @@ server:
 logging:
   level:
     com.atguigu.gulimall: debug
+
 
 
 
