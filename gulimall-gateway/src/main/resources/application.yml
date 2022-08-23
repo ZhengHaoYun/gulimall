@@ -49,5 +49,12 @@ spring:
           filters:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
 
+        - id: search_route
+          uri: lb://gulimall-search
+          predicates:
+            - Host=search.gulimall.com
+
+
+
 server:
   port: 88
